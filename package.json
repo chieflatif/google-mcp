@@ -1,0 +1,70 @@
+{
+  "name": "@latifhorst/google-mcp",
+  "version": "0.2.0",
+  "description": "Production-grade MCP server for Google Workspace - Gmail, Calendar, Sheets, Docs, and Drive integration",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "google-mcp": "./dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "google-workspace",
+    "gmail",
+    "google-calendar",
+    "google-sheets",
+    "google-docs",
+    "google-drive",
+    "ai",
+    "claude",
+    "cursor",
+    "chatgpt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latifhorst/google-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/latifhorst/google-mcp/issues"
+  },
+  "homepage": "https://github.com/latifhorst/google-mcp#readme",
+  "author": "Latif Horst",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "mcp": "npm run build --silent && node dist/index.js",
+    "setup": "tsx scripts/setup.ts",
+    "test:auth": "tsx scripts/test-auth.ts",
+    "test:transcript": "tsx scripts/test-transcript.ts",
+    "start-work": "bash scripts/work-start.sh",
+    "branch": "bash scripts/git-workflow.sh",
+    "backup": "bash scripts/git-backup.sh",
+    "auto-backup": "bash scripts/auto-backup.sh",
+    "customize": "node scripts/hyper-customize-framework.cjs",
+    "validate-framework": "bash scripts/framework-validate.sh",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@googleapis/gmail": "^1.0.0",
+    "@googleapis/calendar": "^1.0.0",
+    "@googleapis/sheets": "^12.0.0",
+    "@googleapis/docs": "^8.1.0",
+    "@googleapis/drive": "^19.1.0",
+    "@modelcontextprotocol/sdk": "^1.2.0",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^164.1.0",
+    "zod": "^3.25.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

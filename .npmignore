@@ -1,0 +1,42 @@
+# .npmignore - What NOT to publish to npm
+
+# Source files (users don't need these)
+src/
+tests/
+scripts/
+context/
+cursorrules/
+patterns/
+templates/
+docs/
+
+# Development files
+*.ts
+!*.d.ts
+tsconfig.json
+.env
+.env.example
+
+# Build artifacts we don't need
+dist-diagnostic/
+dist-dynamic/
+dist-safe/
+
+# Git and backups
+.git/
+.gitignore
+.backup_tracker
+.backups/
+
+# Testing and demos
+attachment-demo.txt
+ZAPIER-SETUP.md
+ANALYSIS-WHY-NO-GOOGLE-MCP.md
+
+# Keep these:
+# dist/ (the built code)
+# README.md
+# DEPLOYMENT.md
+# package.json
+# LICENSE
+
