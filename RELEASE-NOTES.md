@@ -68,7 +68,7 @@ First comprehensive, production-grade Model Context Protocol server for Google W
 ## 📦 Installation
 
 ```bash
-npm install -g @latifhorst/google-mcp
+npm install -g @chieflatif/google-mcp
 ```
 
 ## ⚙️ Quick Setup
@@ -84,7 +84,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed steps:
 ### 2. Authenticate
 
 ```bash
-cd $(npm root -g)/@latifhorst/google-mcp
+cd $(npm root -g)/@chieflatif/google-mcp
 
 GOOGLE_CLIENT_ID="your-client-id" \
 GOOGLE_CLIENT_SECRET="your-client-secret" \
@@ -102,7 +102,7 @@ Follow the browser prompt to grant permissions. Tokens saved to `~/.mcp-google/t
   "mcpServers": {
     "google-mcp": {
       "command": "npx",
-      "args": ["-y", "@latifhorst/google-mcp"],
+      "args": ["-y", "@chieflatif/google-mcp"],
       "env": {
         "MCP_CORE_TOOLS": "1",
         "GOOGLE_CLIENT_ID": "your-client-id",

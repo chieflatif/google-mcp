@@ -26,7 +26,7 @@
 
 **Found:**
 - "Latif Horst" in LICENSE copyright (✅ Appropriate)
-- "@latifhorst/google-mcp" in package name (✅ Required)
+- "@chieflatif/google-mcp" in package name (✅ Required)
 
 **Not Found:**
 - Personal email addresses (only example.com)
@@ -147,7 +147,7 @@ dist/ (compiled JavaScript + type definitions)
 
 **Command:**
 ```bash
-npm install -g @latifhorst/google-mcp
+npm install -g @chieflatif/google-mcp
 ```
 
 **Installs:**

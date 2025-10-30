@@ -1,5 +1,5 @@
 {
-  "name": "@latifhorst/google-mcp",
+  "name": "@chieflatif/google-mcp",
   "version": "0.2.0",
   "description": "Production-grade MCP server for Google Workspace - Gmail, Calendar, Sheets, Docs, and Drive integration",
   "type": "module",

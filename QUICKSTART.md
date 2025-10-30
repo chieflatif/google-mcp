@@ -15,7 +15,7 @@
 ## Step 1: Install (1 minute)
 
 ```bash
-npm install -g @latifhorst/google-mcp
+npm install -g @chieflatif/google-mcp
 ```
 
 ---
@@ -56,7 +56,7 @@ Run this command with your credentials:
 ```bash
 GOOGLE_CLIENT_ID="your-actual-client-id-here.apps.googleusercontent.com" \
 GOOGLE_CLIENT_SECRET="your-actual-client-secret-here" \
-npx @latifhorst/google-mcp-setup
+npx -y @chieflatif/google-mcp setup-oauth
 ```
 
 **What happens:**
@@ -78,7 +78,7 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "google-mcp": {
       "command": "npx",
-      "args": ["-y", "@latifhorst/google-mcp"],
+      "args": ["-y", "@chieflatif/google-mcp"],
       "env": {
         "MCP_CORE_TOOLS": "1",
         "GOOGLE_CLIENT_ID": "paste-your-client-id-here",
