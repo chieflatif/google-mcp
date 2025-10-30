@@ -23,29 +23,18 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/latifhorst/google-mcp.git"
+    "url": "git+https://github.com/chieflatif/google-mcp.git"
   },
   "bugs": {
-    "url": "https://github.com/latifhorst/google-mcp/issues"
+    "url": "https://github.com/chieflatif/google-mcp/issues"
   },
-  "homepage": "https://github.com/latifhorst/google-mcp#readme",
+  "homepage": "https://github.com/chieflatif/google-mcp#readme",
   "author": "Latif Horst",
   "license": "MIT",
   "scripts": {
-    "dev": "tsx src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "mcp": "npm run build --silent && node dist/index.js",
-    "setup": "tsx scripts/setup.ts",
-    "test:auth": "tsx scripts/test-auth.ts",
-    "test:transcript": "tsx scripts/test-transcript.ts",
-    "start-work": "bash scripts/work-start.sh",
-    "branch": "bash scripts/git-workflow.sh",
-    "backup": "bash scripts/git-backup.sh",
-    "auto-backup": "bash scripts/auto-backup.sh",
-    "customize": "node scripts/hyper-customize-framework.cjs",
-    "validate-framework": "bash scripts/framework-validate.sh",
-    "smoke": "tsx scripts/smoke.ts"
+    "setup-oauth": "node scripts/setup-oauth.js"
   },
   "dependencies": {
     "@googleapis/gmail": "^1.0.0",
