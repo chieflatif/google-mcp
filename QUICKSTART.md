@@ -95,7 +95,13 @@ Edit `~/.cursor/mcp.json` - same format as above.
 
 ### For ChatGPT Desktop
 
-Edit ChatGPT's config file - same format as Claude.
+**See dedicated guide:** [CHATGPT-SETUP.md](./CHATGPT-SETUP.md)
+
+Quick config:
+- **macOS**: `~/Library/Application Support/ChatGPT/config.json`
+- **Windows**: `%APPDATA%\ChatGPT\config.json`
+
+Use same format as Claude above.
 
 ---
 

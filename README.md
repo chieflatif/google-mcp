@@ -53,62 +53,48 @@ Production-grade MCP server for complete Google Workspace integration with Gmail
 
 ## Installation
 
+### Quick Start
+
+**Get started in 10 minutes** - see [QUICKSTART.md](./QUICKSTART.md)
+
 ### Prerequisites
 
 - Node.js >= 20.0.0
-- Google Cloud Project with APIs enabled:
-  - Gmail API
-  - Google Calendar API
-  - Google Sheets API
-  - Google Docs API
-  - Google Drive API
+- Google Cloud Project with OAuth credentials (5-minute setup in QUICKSTART.md)
 
-### Setup
+### Install from npm
 
-1. **Clone and install:**
 ```bash
-git clone https://github.com/yourusername/google-mcp.git
-cd google-mcp
-npm install
+npm install -g @chieflatif/google-mcp
 ```
 
-2. **Configure OAuth credentials:**
+### Authenticate
 
-Create a Google Cloud OAuth 2.0 client:
-- Go to [Google Cloud Console](https://console.cloud.google.com)
-- Create project and enable required APIs
-- Create OAuth 2.0 credentials (Desktop app)
-- Set authorized redirect URI: `http://localhost:3333/callback`
-
-3. **Authenticate:**
 ```bash
-GOOGLE_CLIENT_ID="your-client-id" \
+GOOGLE_CLIENT_ID="your-client-id.apps.googleusercontent.com" \
 GOOGLE_CLIENT_SECRET="your-client-secret" \
-node scripts/setup-oauth.js
+npx @chieflatif/google-mcp setup-oauth
 ```
 
 Follow the browser prompt to grant permissions. Tokens are saved to `~/.mcp-google/tokens.json`.
 
-4. **Build:**
-```bash
-npm run build
-```
+**That's it!** Now configure your AI client below.
 
-## Usage with Cursor
+## Usage with AI Clients
 
-Add to your `~/.cursor/mcp.json`:
+### Claude Desktop
+
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
     "google-mcp": {
-      "command": "node",
-      "args": [
-        "/absolute/path/to/google-mcp/dist/index.js"
-      ],
+      "command": "npx",
+      "args": ["-y", "@chieflatif/google-mcp"],
       "env": {
         "MCP_CORE_TOOLS": "1",
-        "GOOGLE_CLIENT_ID": "your-client-id",
+        "GOOGLE_CLIENT_ID": "your-client-id.apps.googleusercontent.com",
         "GOOGLE_CLIENT_SECRET": "your-client-secret"
       }
     }
@@ -116,11 +102,54 @@ Add to your `~/.cursor/mcp.json`:
 }
 ```
 
-Restart Cursor and start using Google Workspace via natural language:
-- "Read my Master Task List spreadsheet"
-- "Create a client doc for Acme Inc"
-- "Search my Drive for Q4 planning documents"
+### Cursor
+
+Edit `~/.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "google-mcp": {
+      "command": "npx",
+      "args": ["-y", "@chieflatif/google-mcp"],
+      "env": {
+        "MCP_CORE_TOOLS": "1",
+        "GOOGLE_CLIENT_ID": "your-client-id.apps.googleusercontent.com",
+        "GOOGLE_CLIENT_SECRET": "your-client-secret"
+      }
+    }
+  }
+}
+```
+
+### ChatGPT Desktop
+
+Edit ChatGPT Desktop config file:
+- **macOS**: `~/Library/Application Support/ChatGPT/config.json`
+- **Windows**: `%APPDATA%\ChatGPT\config.json`
+
+```json
+{
+  "mcpServers": {
+    "google-mcp": {
+      "command": "npx",
+      "args": ["-y", "@chieflatif/google-mcp"],
+      "env": {
+        "MCP_CORE_TOOLS": "1",
+        "GOOGLE_CLIENT_ID": "your-client-id.apps.googleusercontent.com",
+        "GOOGLE_CLIENT_SECRET": "your-client-secret"
+      }
+    }
+  }
+}
+```
+
+**Restart your AI client** and start using Google Workspace via natural language:
 - "What's on my calendar today?"
+- "Read my Master Task List spreadsheet"
+- "Send email to colleague@example.com about meeting"
+- "Create a new doc called 'Project Plan'"
+- "Search my Drive for Q4 planning documents"
 
 ## Configuration Modes
 
